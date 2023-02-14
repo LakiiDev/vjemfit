@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 const Nav = ({ navToggle, setNavToggle, section }) => {
   const navToggleHandler = async () => {
     setNavToggle(!navToggle);
@@ -90,6 +91,9 @@ const Navigation = styled.nav`
   span {
     color: #ff4f5e;
   }
+  .hamburger-menu {
+    display: none;
+  }
   @media (max-width: 1500px) {
     max-width: 100%;
     margin: 5rem 2rem;
@@ -120,6 +124,7 @@ const Navigation = styled.nav`
       //transform hamburger menu to x
     }
     .hamburger-menu {
+      display: block;
       cursor: pointer;
       background-color: #ff4450;
       padding: 1.5rem;

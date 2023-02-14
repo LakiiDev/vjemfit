@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import heroGuy from "../assets/images/hero.png";
 import circle from "../assets/images/circle.svg";
-import arrow from "../assets/images/arrow.svg";
+import { Arrow } from "../arrow";
+
 const Header = () => {
   return (
     <HeroWrapper>
@@ -22,7 +23,7 @@ const Header = () => {
           </a>
         </Text>
       </Hero>
-      <img src={arrow} alt="" className="arrow" />
+      <Arrow />
     </HeroWrapper>
   );
 };
