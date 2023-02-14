@@ -39,7 +39,7 @@ const Classes = () => {
           </div>
         </Heading>
         <Grid>
-          <div className="tile">
+          <div className="tile tile1">
             <img src={tile1} alt="" />
           </div>
           <div className="tile author-tile">
@@ -56,10 +56,10 @@ const Classes = () => {
           <div className="tile text-tile">
             <h3>Create and personalize your workout routine</h3>
           </div>
-          <div className="tile">
+          <div className="tile tile2">
             <img src={tile4} alt="" />
           </div>
-          <div className="tile">
+          <div className="tile tile3">
             <img src={tile5} alt="" />
           </div>
         </Grid>
@@ -76,11 +76,23 @@ const OurClasses = styled.div`
   max-width: 144rem;
   margin: 0 auto;
   padding-bottom: 10rem;
+  @media (max-width: 1500px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 `;
 const Heading = styled.div`
   display: flex;
   padding-bottom: 7rem;
   padding-top: 5rem;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    text-align: center;
+    p {
+      max-width: 100% !important;
+      font-size: 2.4rem !important;
+    }
+  }
   .text {
     flex: 1.3;
 
@@ -90,6 +102,12 @@ const Heading = styled.div`
       font-size: 1.8rem;
       line-height: 150%;
     }
+    @media (max-width: 1100px) {
+      p {
+        font-size: 1.9rem;
+      }
+    }
+
     h2 {
       color: #fff;
     }
@@ -117,6 +135,56 @@ const Grid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   row-gap: 5rem;
   column-gap: 5rem;
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+    .tile1 {
+      grid-area: 2/1/2/2;
+    }
+    .tile2 {
+      grid-area: 3/1/3/2;
+    }
+    .tile3 {
+      grid-area: 3/2/3/3;
+    }
+    .author-tile {
+      grid-area: 1/1/1/3 !important;
+    }
+    .text-tile {
+      grid-area: 2/2/2/3;
+    }
+  }
+  @media (max-width: 800px) {
+    .text-tile {
+      font-size: 2.4rem !important;
+    }
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr) !important;
+    max-width: 100% !important;
+    .tile1 {
+      grid-area: 2/1/2/2;
+    }
+    .tile2 {
+      grid-area: 4/1/4/2;
+    }
+    .tile3 {
+      grid-area: 5/1/5/2;
+    }
+    .author-tile {
+      grid-area: 1/1/1/2 !important;
+      .arrow {
+        align-self: flex-start !important;
+        margin-top: 3rem !important;
+      }
+      h3 {
+        font-size: 5.4rem !important;
+      }
+    }
+    .text-tile {
+      grid-area: 3/1/3/2;
+      min-height: 40rem;
+    }
+  }
   .tile {
     color: #fff;
     img {

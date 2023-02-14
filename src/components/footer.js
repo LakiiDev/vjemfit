@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <Nav isFooter={true}></Nav>
+      <Nav section="footer"></Nav>
       <div className="follow-us">
         <h3>Follow us:</h3>
         <div className="social-icons">
@@ -101,6 +101,26 @@ const FooterContainer = styled.footer`
       img {
         height: 3rem;
         width: 3rem;
+      }
+    }
+  }
+  @media (max-width: 1500px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    .join-program {
+      max-width: 50% !important;
+    }
+  }
+  @media (max-width: 1100px) {
+    .join-program {
+      max-width: 60% !important;
+    }
+  }
+  @media (max-width: 500px) {
+    .email {
+      flex-direction: column;
+      input {
+        text-align: center;
       }
     }
   }

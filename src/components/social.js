@@ -86,6 +86,33 @@ const Socials = styled.div`
     gap: 15rem;
     img {
       flex: 0.5;
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 1500px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 1100px) {
+    .social-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .titles {
+      h3 {
+        font-size: 3.6rem !important;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .heading {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 5rem;
+      text-align: center;
+      h3 {
+        font-size: 4rem !important;
+      }
     }
   }
 `;
@@ -95,6 +122,9 @@ const SocialMedias = styled.div`
     height: 0.1rem;
     background-color: #000000;
   }
+  @media (max-width: 1100px) {
+    width: 70%;
+  }
 `;
 const SocialMedia = styled.div`
   display: flex;
@@ -103,8 +133,8 @@ const SocialMedia = styled.div`
   margin-bottom: 2rem;
   margin-top: 2rem;
   img {
-    max-height: 1.6rem;
-    max-width: 1.6rem;
+    max-height: 1.6rem !important;
+    max-width: 1.6rem !important;
     padding: 1rem;
     background-color: #ff4450;
   }

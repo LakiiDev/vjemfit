@@ -149,6 +149,15 @@ const PlansAndPricing = styled.div`
       }
     }
   }
+  @media (max-width: 1500px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 500px) {
+    h2 {
+      text-align: center !important;
+    }
+  }
 `;
 const Plans = styled(motion.div)`
   width: 100%;
@@ -156,6 +165,10 @@ const Plans = styled(motion.div)`
   gap: 4rem;
   margin-top: 5rem;
   padding-bottom: 10rem;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 10rem;
+  }
 `;
 const Plan = styled.div`
   flex: 1;
@@ -216,5 +229,14 @@ const Plan = styled.div`
   }
   .free {
     color: #fff;
+  }
+  @media (max-width: 800px) {
+    align-items: center;
+
+    p {
+      font-size: 2.2rem !important;
+    }
+    width: 60%;
+    margin: 0 auto;
   }
 `;

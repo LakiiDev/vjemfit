@@ -33,6 +33,7 @@ const WorkoutWrapper = styled.div`
     width: 100%;
     .bannerImg {
       width: 100%;
+      height: 100%;
       display: block;
     }
     .play {
@@ -40,6 +41,15 @@ const WorkoutWrapper = styled.div`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      max-width: 20rem;
+    }
+  }
+  @media (max-width: 800px) {
+    .bannerImg {
+      min-height: 30vh !important;
+    }
+    .play {
+      max-width: 15rem !important;
     }
   }
 `;
@@ -59,5 +69,21 @@ const Workout = styled.div`
     text-align: center;
     font-size: 1.8rem;
     line-height: 150%;
+  }
+  @media (max-width: 1100px) {
+    p {
+      font-size: 1.9rem;
+    }
+  }
+  @media (max-width: 500px) {
+    h2 {
+      width: 90%;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    p {
+      width: 90%;
+      font-size: 2rem;
+    }
   }
 `;

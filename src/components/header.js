@@ -33,14 +33,39 @@ const Hero = styled.header`
   justify-content: space-between;
   max-width: 144rem;
   margin: 0 auto;
+  @media (max-width: 1500px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    a {
+      margin: 0 auto;
+    }
+  }
 `;
 const HeroWrapper = styled.div`
   position: relative;
-  padding: 10rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   .arrow {
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+  @media (max-width: 1500px) {
+    .arrow {
+      transform: scale(0.8);
+      transform-origin: bottom right;
+    }
+  }
+  @media (max-width: 800px) {
+    .arrow {
+      display: none;
+    }
   }
 `;
 const Img = styled.div`
@@ -48,6 +73,12 @@ const Img = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  @media (max-width: 800px) {
+    margin-left: -20rem;
+    .circle {
+      left: 25% !important;
+    }
+  }
   .circle {
     position: absolute;
     top: 20%;
@@ -56,6 +87,17 @@ const Img = styled.div`
   .image {
     position: relative;
     z-index: 100;
+  }
+  @media (max-width: 500px) {
+    margin-left: 0;
+    .image {
+      max-width: 100%;
+      margin-left: -5rem;
+    }
+    .circle {
+      left: 0rem !important;
+      width: 100%;
+    }
   }
 `;
 const Text = styled.div`
@@ -66,6 +108,7 @@ const Text = styled.div`
   color: #fff;
   margin-top: 2rem;
   align-items: flex-start;
+  z-index: 100;
   h1 {
     font-size: 6.4rem;
     font-weight: 700;
