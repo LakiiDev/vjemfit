@@ -1,8 +1,10 @@
-import { useInView } from "react-inetersection-observer";
+//import useInView from "react-intersection-observer";
+
 import { motion } from "framer-motion";
+import { useScroll } from "./components/useScroll";
 
 export const Arrow = () => {
-  const [element, view] = useInView({ threshold: 0.5, triggerOnce: true });
+  const [element, view] = useScroll();
   return (
     <svg
       ref={element}
@@ -20,7 +22,7 @@ export const Arrow = () => {
           stroke-width="5"
           initial={{ pathLength: 0, pathOffset: 1 }}
           animate={{ pathLength: 1, pathOffset: 0 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
         />
       </g>
       <defs>

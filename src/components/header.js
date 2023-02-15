@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import heroGuy from "../assets/images/hero.png";
 import circle from "../assets/images/circle.svg";
 import { Arrow } from "../arrow";
+import { title, staggerChildren } from "../Animations";
+import { useScroll } from "./useScroll";
 
 const Header = () => {
+  const [element, controls] = useScroll();
   return (
     <HeroWrapper>
       <Hero>
@@ -13,10 +18,15 @@ const Header = () => {
           <img src={circle} alt="" className="circle" />
         </Img>
         <Text>
-          <h1>
-            <span>Transform Your</span>
-            <br /> <span>Mind, Body & Health</span>
-          </h1>
+          <motion.h1>
+            <motion.span variants={title} initial="hidden" animate="show">
+              Transform Your
+            </motion.span>
+            <br />
+            <motion.span variants={title} initial="hidden" animate="show">
+              Mind, Body & Health
+            </motion.span>
+          </motion.h1>
           <p>Heal your body in 90 days with proven holistic methods </p>
           <a href="" className="button">
             I’m Ready to Change
@@ -29,7 +39,7 @@ const Header = () => {
 };
 export default Header;
 
-const Hero = styled.header`
+const Hero = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   max-width: 144rem;
