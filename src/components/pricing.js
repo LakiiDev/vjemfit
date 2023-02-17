@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import PlansData from "../PlansData";
 import checkmark from "../assets/icons/checkmark.svg";
+import { fadeUp, fade, photoAnim } from "../Animations";
 const Pricing = () => {
   const [yearly, setYearly] = React.useState(false);
   const [plans] = React.useState(PlansData());
@@ -18,8 +19,22 @@ const Pricing = () => {
   };
   return (
     <PlansAndPricing>
-      <h2>Our pricing & Plans</h2>
-      <div className="plan-selection">
+      <motion.h2
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.5 }}
+        initial={"hidden"}
+        variants={fadeUp}
+      >
+        Our pricing & Plans
+      </motion.h2>
+      <motion.div
+        className="plan-selection"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.5 }}
+        initial={"hidden"}
+        variants={fadeUp}
+        transition={{ delay: 0.5 }}
+      >
         <h4>Montly</h4>
         <div
           className={`switch ${yearly ? "on" : "off"}`}
@@ -37,6 +52,20 @@ const Pricing = () => {
           ></motion.div>
         </div>
         <h4>Yearly</h4>
+      </motion.div>
+      <div
+        className={`discount ${yearly ? "active" : ""}`}
+        variants={fade}
+        transition={{
+          duration: 1,
+          stiffness: 200,
+          damping: 50,
+          times: [0, 0.5, 1],
+        }}
+        initial={"hidden"}
+        animate={yearly ? "show" : "hidden"}
+      >
+        40% discount
       </div>
       <Plans
         variants={planChange}
@@ -48,7 +77,12 @@ const Pricing = () => {
           times: [0, 0.5, 1],
         }}
       >
-        <Plan>
+        <Plan
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          initial={"hidden"}
+          variants={fadeUp}
+        >
           <h3>{plans[0].title}</h3>
           <div className="price">
             <h2>
@@ -68,7 +102,12 @@ const Pricing = () => {
             {plans[0].button}
           </a>
         </Plan>
-        <Plan>
+        <Plan
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          initial={"hidden"}
+          variants={fadeUp}
+        >
           <h3>{plans[1].title}</h3>
           <div className="price">
             <h2>
@@ -86,7 +125,12 @@ const Pricing = () => {
           </ul>
           <a href="">{plans[1].button}</a>
         </Plan>
-        <Plan>
+        <Plan
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          initial={"hidden"}
+          variants={fadeUp}
+        >
           <h3>{plans[2].title}</h3>
           <div className="price">
             <h2>
@@ -149,6 +193,16 @@ const PlansAndPricing = styled.div`
       }
     }
   }
+  .discount {
+    font-size: 2.4rem;
+    padding: 1rem 2rem;
+    background-color: #ff4f5e;
+    font-weight: 600;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
   @media (max-width: 1500px) {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -170,7 +224,7 @@ const Plans = styled(motion.div)`
     gap: 10rem;
   }
 `;
-const Plan = styled.div`
+const Plan = styled(motion.div)`
   flex: 1;
   display: flex;
   flex-direction: column;

@@ -1,15 +1,54 @@
 import { motion } from "framer-motion";
 
-export const staggerChildren = {
-  transition: {
-    staggerChildren: 0.1,
+export const titleAnim = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
   },
 };
-
-export const title = {
-  hidden: { x: -200 },
+export const fade = {
+  hidden: {
+    opacity: 0,
+  },
   show: {
-    x: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+export const photoAnim = {
+  hidden: {
+    scale: 1.5,
+    opacity: 0,
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+export const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+    scale: 0.8,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 1.5,
+      ease: "easeOut",
+    },
   },
 };

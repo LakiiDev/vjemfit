@@ -2,23 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import guy from "../assets/images/social-guy.jpg";
 import newPage from "../assets/images/right-up-arrow.svg";
+import { motion } from "framer-motion";
+import { fadeUp } from "../Animations";
 const Social = () => {
   return (
     <SocialsWrapper>
-      <Socials>
+      <Socials
+        initial={"hidden"}
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ staggerChildren: 0.3 }}
+      >
         <div className="heading">
-          <div className="titles">
+          <motion.div variants={fadeUp} className="titles">
             <h3>Follow us on</h3>
             <h2>Social Media</h2>
-          </div>
-          <p>
+          </motion.div>
+          <motion.p variants={fadeUp}>
             I use to eat lots of dairy, meat, and processed junk food. i have
             always had a fast matabolism so it never effected my bodyfat, but my
             interal health was suffering. ever since i implemented the holistic
             methods noah provided.
-          </p>
+          </motion.p>
         </div>
-        <div className="social-content">
+        <motion.div className="social-content" variants={fadeUp}>
           <img src={guy} alt="" />
           <SocialMedias>
             <SocialMedia class="first">
@@ -42,7 +49,7 @@ const Social = () => {
             </SocialMedia>
             <hr />
           </SocialMedias>
-        </div>
+        </motion.div>
       </Socials>
     </SocialsWrapper>
   );
@@ -54,7 +61,7 @@ const SocialsWrapper = styled.div`
   padding-top: 10rem;
   padding-bottom: 15rem;
 `;
-const Socials = styled.div`
+const Socials = styled(motion.div)`
   max-width: 144rem;
   margin: 0 auto;
   .heading {

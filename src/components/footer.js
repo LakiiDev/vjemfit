@@ -4,10 +4,16 @@ import Nav from "./nav";
 import twitter from "../assets/icons/twitter.svg";
 import facebook from "../assets/icons/facebook.svg";
 import linkedin from "../assets/icons/linkedin.svg";
-
+import { fade } from "../Animations";
+import { motion } from "framer-motion";
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.3 }}
+      initial={"hidden"}
+      variants={fade}
+    >
       <div className="join-program-wrapper">
         <div className="join-program">
           <h2>Ready to join this program and get 1 free program</h2>
@@ -39,7 +45,7 @@ const Footer = () => {
 };
 export default Footer;
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled(motion.div)`
   max-width: 144rem;
   margin: 5rem auto;
   margin-top: 10rem;
@@ -90,6 +96,7 @@ const FooterContainer = styled.footer`
     align-items: center;
     color: #fff;
     gap: 1.5rem;
+    padding-top: 5rem;
     h3 {
       font-size: 2.4rem;
       font-weight: 400;

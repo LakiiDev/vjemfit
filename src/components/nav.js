@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
+import { titleAnim } from "../Animations";
 const Nav = ({ navToggle, setNavToggle, section }) => {
   const navToggleHandler = async () => {
     setNavToggle(!navToggle);
   };
   if (section === "header") {
     return (
-      <Navigation className={`${navToggle ? "active" : ""}`}>
+      <Navigation
+        variants={titleAnim}
+        initial="hidden"
+        animate="show"
+        className={`${navToggle ? "active" : ""}`}
+      >
         <p>
           Vjem<span>FIT</span>
         </p>
@@ -75,11 +81,12 @@ const Nav = ({ navToggle, setNavToggle, section }) => {
 export default Nav;
 
 //make styled component for nav
-const Navigation = styled.nav`
+const Navigation = styled(motion.nav)`
   font-size: 3.2rem;
   height: 60px;
   max-width: 144rem;
-  margin: 5rem auto;
+  margin: 0rem auto;
+  padding-top: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

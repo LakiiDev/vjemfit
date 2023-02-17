@@ -5,11 +5,18 @@ import tile1 from "../assets/images/man-lifting.jpg";
 import tile4 from "../assets/images/man-lifting2.jpg";
 import tile5 from "../assets/images/woman-exer.jpg";
 import milan from "../assets/icons/milan-jack-pfp.png";
+import { motion } from "framer-motion";
+import { fadeUp, fade, photoAnim } from "../Animations";
 const Classes = () => {
   return (
     <OurClassesWrapper>
       <OurClasses>
-        <Heading>
+        <Heading
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.5 }}
+          initial={"hidden"}
+          variants={fadeUp}
+        >
           <div className="text">
             <h2>Our Classes</h2>
             <p>
@@ -39,10 +46,22 @@ const Classes = () => {
           </div>
         </Heading>
         <Grid>
-          <div className="tile tile1">
+          <motion.div
+            className="tile tile1"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            initial={"hidden"}
+            variants={fadeUp}
+          >
             <img src={tile1} alt="" />
-          </div>
-          <div className="tile author-tile">
+          </motion.div>
+          <motion.div
+            className="tile author-tile"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            initial={"hidden"}
+            variants={fadeUp}
+          >
             <div className="author">
               <img src={milan} alt="" />
               <h5>Milan Jack</h5>
@@ -52,16 +71,34 @@ const Classes = () => {
               Experiences
             </h3>
             <img src={newPage} alt="" className="arrow" />
-          </div>
-          <div className="tile text-tile">
+          </motion.div>
+          <motion.div
+            className="tile text-tile"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            initial={"hidden"}
+            variants={fadeUp}
+          >
             <h3>Create and personalize your workout routine</h3>
-          </div>
-          <div className="tile tile2">
+          </motion.div>
+          <motion.div
+            className="tile tile2"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            initial={"hidden"}
+            variants={fadeUp}
+          >
             <img src={tile4} alt="" />
-          </div>
-          <div className="tile tile3">
+          </motion.div>
+          <motion.div
+            className="tile tile3"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            initial={"hidden"}
+            variants={fadeUp}
+          >
             <img src={tile5} alt="" />
-          </div>
+          </motion.div>
         </Grid>
       </OurClasses>
     </OurClassesWrapper>
@@ -81,7 +118,7 @@ const OurClasses = styled.div`
     margin-right: 2rem;
   }
 `;
-const Heading = styled.div`
+const Heading = styled(motion.div)`
   display: flex;
   padding-bottom: 7rem;
   padding-top: 5rem;

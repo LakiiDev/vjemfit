@@ -5,32 +5,42 @@ import { motion } from "framer-motion";
 import heroGuy from "../assets/images/hero.png";
 import circle from "../assets/images/circle.svg";
 import { Arrow } from "../arrow";
-import { title, staggerChildren } from "../Animations";
-import { useScroll } from "./useScroll";
+import { fade, titleAnim, photoAnim } from "../Animations";
 
 const Header = () => {
-  const [element, controls] = useScroll();
   return (
     <HeroWrapper>
-      <Hero>
-        <Img>
+      <Hero
+        initial={"hidden"}
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ staggerChildren: 0.5, delayChildren: 1 }}
+      >
+        <Img variants={photoAnim}>
           <img src={heroGuy} alt="" className="image" />
           <img src={circle} alt="" className="circle" />
         </Img>
-        <Text>
-          <motion.h1>
-            <motion.span variants={title} initial="hidden" animate="show">
-              Transform Your
-            </motion.span>
+        <Text
+          initial={"hidden"}
+          transition={{ staggerChildren: 0.75 }}
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <motion.div className="titles">
+            <div>
+              <motion.h1 variants={titleAnim}>Transform Your</motion.h1>
+            </div>
             <br />
-            <motion.span variants={title} initial="hidden" animate="show">
-              Mind, Body & Health
-            </motion.span>
-          </motion.h1>
-          <p>Heal your body in 90 days with proven holistic methods </p>
-          <a href="" className="button">
+            <div>
+              <motion.h1 variants={titleAnim}>Mind, Body & Health</motion.h1>
+            </div>
+          </motion.div>
+          <motion.p variants={fade}>
+            Heal your body in 90 days with proven holistic methods{" "}
+          </motion.p>
+          <motion.a variants={fade} href="#" className="button">
             I’m Ready to Change
-          </a>
+          </motion.a>
         </Text>
       </Hero>
       <Arrow />
@@ -48,6 +58,7 @@ const Hero = styled(motion.div)`
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
   @media (max-width: 800px) {
     flex-direction: column-reverse;
     align-items: center;
@@ -79,7 +90,7 @@ const HeroWrapper = styled.div`
     }
   }
 `;
-const Img = styled.div`
+const Img = styled(motion.div)`
   flex: 1;
   position: relative;
   width: 100%;
@@ -111,7 +122,7 @@ const Img = styled.div`
     }
   }
 `;
-const Text = styled.div`
+const Text = styled(motion.div)`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -132,5 +143,10 @@ const Text = styled.div`
   .button {
     font-size: 2.4rem;
     font-weight: 700;
+  }
+  .titles {
+    div {
+      overflow: hidden;
+    }
   }
 `;
