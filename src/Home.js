@@ -24,6 +24,10 @@ const Home = () => {
         smooth: true,
       },
     });
+    // wait for images to load
+    window.addEventListener("load", () => {
+      scroll.update();
+    });
     return () => scroll.destroy();
   }, []);
   return (
