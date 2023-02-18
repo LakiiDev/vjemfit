@@ -23,6 +23,7 @@ const Home = () => {
       tablet: {
         smooth: true,
       },
+      offset: 100,
     });
     // wait for images to load
     window.addEventListener("load", () => {
@@ -37,7 +38,6 @@ const Home = () => {
       ref={containerRef}
       data-scroll-speed="1"
       data-scroll-repeat
-      data-scroll-sticky
     >
       <Nav
         navToggle={navToggle}

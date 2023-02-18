@@ -47,6 +47,10 @@ html.has-scroll-dragging {
 .has-scroll-smooth body {
  overflow: hidden;
 }
+[data-scroll-container]
+{
+    min-height: 100vh;
+}
 .has-scroll-smooth [data-scroll-container] {
  min-height: 100vh;
 }
