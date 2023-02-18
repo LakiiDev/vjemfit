@@ -28,7 +28,7 @@ const Social = () => {
         <motion.div className="social-content" variants={fadeUp}>
           <img src={guy} alt="" />
           <SocialMedias>
-            <SocialMedia class="first">
+            <SocialMedia className="first">
               <p>Instgram</p>
               <img src={newPage} alt="" />
             </SocialMedia>

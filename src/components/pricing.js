@@ -82,6 +82,7 @@ const Pricing = () => {
           viewport={{ once: false, amount: 0.3 }}
           initial={"hidden"}
           variants={fadeUp}
+          id={plans[0].id}
         >
           <h3>{plans[0].title}</h3>
           <div className="price">
@@ -91,8 +92,8 @@ const Pricing = () => {
             <p>{yearly ? "/year" : `${plans[0].reccuring}`}</p>
           </div>
           <ul>
-            {plans[0].features.map((feature) => (
-              <li>
+            {plans[0].features.map((feature, index) => (
+              <li key={index}>
                 <img src={checkmark} alt="" />
                 <p>{feature}</p>
               </li>
@@ -107,6 +108,7 @@ const Pricing = () => {
           viewport={{ once: false, amount: 0.3 }}
           initial={"hidden"}
           variants={fadeUp}
+          id={plans[1].id}
         >
           <h3>{plans[1].title}</h3>
           <div className="price">
@@ -116,8 +118,8 @@ const Pricing = () => {
             <p>{yearly ? "/year" : `${plans[1].reccuring}`}</p>
           </div>
           <ul>
-            {plans[1].features.map((feature) => (
-              <li>
+            {plans[1].features.map((feature, index) => (
+              <li key={index}>
                 <img src={checkmark} alt="" />
                 <p>{feature}</p>
               </li>
@@ -130,6 +132,7 @@ const Pricing = () => {
           viewport={{ once: false, amount: 0.3 }}
           initial={"hidden"}
           variants={fadeUp}
+          id={plans[2].id}
         >
           <h3>{plans[2].title}</h3>
           <div className="price">
@@ -141,8 +144,8 @@ const Pricing = () => {
             <p>{yearly ? "/year" : `${plans[2].reccuring}`}</p>
           </div>
           <ul>
-            {plans[2].features.map((feature) => (
-              <li>
+            {plans[2].features.map((feature, index) => (
+              <li key={index}>
                 <img src={checkmark} alt="" />
                 <p>{feature}</p>
               </li>
