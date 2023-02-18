@@ -6,7 +6,7 @@ import tile4 from "../assets/images/man-lifting2.jpg";
 import tile5 from "../assets/images/woman-exer.jpg";
 import milan from "../assets/icons/milan-jack-pfp.png";
 import { motion } from "framer-motion";
-import { fadeUp, fade, photoAnim } from "../Animations";
+import { fadeUp } from "../Animations";
 const Classes = () => {
   return (
     <OurClassesWrapper>

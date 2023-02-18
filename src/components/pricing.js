@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import PlansData from "../PlansData";
 import checkmark from "../assets/icons/checkmark.svg";
-import { fadeUp, fade, photoAnim } from "../Animations";
+import { fadeUp, fade } from "../Animations";
 const Pricing = () => {
   const [yearly, setYearly] = React.useState(false);
   const [plans] = React.useState(PlansData());
@@ -98,7 +98,7 @@ const Pricing = () => {
               </li>
             ))}
           </ul>
-          <a href="" className="button free">
+          <a href="#/" className="button free">
             {plans[0].button}
           </a>
         </Plan>
@@ -123,7 +123,7 @@ const Pricing = () => {
               </li>
             ))}
           </ul>
-          <a href="">{plans[1].button}</a>
+          <a href="#/">{plans[1].button}</a>
         </Plan>
         <Plan
           whileInView={"show"}
@@ -148,7 +148,7 @@ const Pricing = () => {
               </li>
             ))}
           </ul>
-          <a href="">{plans[2].button}</a>
+          <a href="#/">{plans[2].button}</a>
         </Plan>
       </Plans>
     </PlansAndPricing>
