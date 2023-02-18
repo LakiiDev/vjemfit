@@ -19,22 +19,22 @@ const Nav = ({ navToggle, setNavToggle, section }) => {
         </p>
         <NavList className={`${navToggle ? "activeNav" : ""}`}>
           <li>
-            <a href="">Home</a>
+            <a href="#/">Home</a>
           </li>
           <li>
-            <a href="">About us</a>
+            <a href="#/">About us</a>
           </li>
           <li>
-            <a href="">Services</a>
+            <a href="#/">Services</a>
           </li>
           <li>
-            <a href="">Experience</a>
+            <a href="#/">Experience</a>
           </li>
           <li>
-            <a href="">Pricing</a>
+            <a href="#/">Pricing</a>
           </li>
           <li>
-            <a href="" className="button">
+            <a href="#/" className="button">
               Sign up
             </a>
           </li>
@@ -59,19 +59,19 @@ const Nav = ({ navToggle, setNavToggle, section }) => {
         </p>
         <NavList>
           <li>
-            <a href="">Home</a>
+            <a href="#/">Home</a>
           </li>
           <li>
-            <a href="">About us</a>
+            <a href="#/">About us</a>
           </li>
           <li>
-            <a href="">Services</a>
+            <a href="#/">Services</a>
           </li>
           <li>
-            <a href="">Experience</a>
+            <a href="#/">Experience</a>
           </li>
           <li>
-            <a href="">Pricing</a>
+            <a href="#/">Pricing</a>
           </li>
         </NavList>
       </Navigation>
