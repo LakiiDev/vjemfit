@@ -25,6 +25,14 @@ const GlobalStyle = createGlobalStyle`
         color: #fff;
         display: block;
         text-decoration: none;
+        border: .2rem solid transparent;
+        &:hover
+        {
+            background-color: transparent;
+            color: #fff;
+            border: .2rem solid #ff4450;
+            transition: all .3s ease;
+        }
     }
     h2
     {

@@ -160,6 +160,13 @@ const Heading = styled(motion.div)`
       color: #fff;
       margin-top: 3rem;
       margin-bottom: 3rem;
+      &:hover {
+        cursor: pointer;
+        img {
+          margin-top: -2rem;
+          transition: all 0.3s ease-in-out;
+        }
+      }
       img {
         padding: 1rem;
         background-color: #ff4450;
@@ -261,6 +268,13 @@ const Grid = styled.div`
       align-self: flex-end;
       filter: invert(50%) sepia(55%) saturate(4357%) hue-rotate(326deg)
         brightness(102%) contrast(105%);
+      &:hover {
+        cursor: pointer;
+        border: 0.25rem solid #ff4450;
+        background-color: #ff4450;
+        filter: none;
+        transition: background-color 0.3s ease-in-out;
+      }
     }
   }
   .text-tile {

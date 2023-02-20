@@ -139,6 +139,13 @@ const SocialMedia = styled.div`
   align-items: center;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  &:hover {
+    cursor: pointer;
+    img {
+      margin-top: -2rem;
+      transition: all 0.3s ease-in-out;
+    }
+  }
   img {
     max-height: 1.6rem !important;
     max-width: 1.6rem !important;

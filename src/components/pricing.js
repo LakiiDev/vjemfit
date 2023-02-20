@@ -125,7 +125,9 @@ const Pricing = () => {
               </li>
             ))}
           </ul>
-          <a href="#/">{plans[1].button}</a>
+          <a href="#/" className="button">
+            {plans[1].button}
+          </a>
         </Plan>
         <Plan
           whileInView={"show"}
@@ -151,7 +153,9 @@ const Pricing = () => {
               </li>
             ))}
           </ul>
-          <a href="#/">{plans[2].button}</a>
+          <a href="#/" className="button">
+            {plans[2].button}
+          </a>
         </Plan>
       </Plans>
     </PlansAndPricing>
@@ -275,7 +279,7 @@ const Plan = styled(motion.div)`
       font-weight: 400;
     }
   }
-  a {
+  .button {
     font-size: 2.8rem;
     font-weight: 500;
     padding: 1.5rem 3rem;
@@ -283,9 +287,19 @@ const Plan = styled(motion.div)`
     text-align: center;
     text-decoration: none;
     color: #ff4f5e;
+    background-color: #fff;
+    &:hover {
+      background-color: #ff4f5e !important;
+      color: #fff !important;
+    }
   }
   .free {
     color: #fff;
+    background-color: #ff4f5e;
+    &:hover {
+      background-color: #fff !important;
+      color: #ff4f5e !important;
+    }
   }
   @media (max-width: 800px) {
     align-items: center;
